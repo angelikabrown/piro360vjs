@@ -1,17 +1,19 @@
 const API_URL = `http://localhost:8080`;
 
 function fetchData() {
-  fetch(`${API_URL}/api/piros`)
+  fetch(`${API_URL}/api/piros/`)
     .then(res => {
-      //console.log("res is ", Object.prototype.toString.call(res));
+      //let resstr = res.json();
+      //console.log("res is ", resstr);
       return res.json();
     })
     .then(data => {
       show(data);
     })
     .catch(error => {
-      console.log(`Error Fetching data : ${error}`);
-      document.getElementById('posts').innerHTML = 'Error Loading Data';
+      errm = `Error Fetching data : ${error}`
+      console.log(errm);
+      document.getElementById('posts').innerHTML = errm;
     });
 }
 
@@ -30,6 +32,7 @@ function show(data) {
   // both are valid ways of building the html.
   const ul = document.getElementById('posts');
   const list = document.createDocumentFragment();
+  //console.log('Data:', data);
 
   data.map(function (post) {
     console.log('Piro:', post);
