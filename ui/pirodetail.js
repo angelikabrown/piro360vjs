@@ -50,9 +50,9 @@ function showPiroDetail(post) {
   let img = document.createElement('p');
   title.innerHTML = `${post.title}`;
   body.innerHTML = `${post.description}`;
-  img.innerHTML = `<img src="${post.s3urltovideo}" alt="image" width="1024" height="300">`;
+  img.innerHTML = `<img src="http://localhost:8080/api/piros/${post.id}/image" alt="image" width="300" height="300">`;
   by.innerHTML = `${post.created} - ${post.id}`;
-
+// http://localhost:8080/api/piros/5/image
   li.appendChild(title);
   li.appendChild(body);
   li.appendChild(img);
