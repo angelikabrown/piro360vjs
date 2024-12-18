@@ -10,6 +10,8 @@ function doPostOfForm(event) {
     let value = p[1];
     object[name] = value;
   }
+  object['created'] = Date.now().toString();
+  console.log('object is ', object);
   var json = JSON.stringify(object);
   // only need to stringify once
   postJSON(json);
