@@ -7,14 +7,22 @@
   <body>
     <h1>Add your data</h1>
     <form id="adddataform">
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title" required />
-
-      <label for="description">Description:</label>
+      
+      <label for="cycleday">Cycle Day:</label>
+      <input type="text" id="title" name="title" required  placeholder="CD1"/>
+      
+      <label for="temperature">Temperature:</label>
       <input type="text" id="description" name="description" />
 
-      <label for="s3urltovideo">S3 URL to Video:</label>
+      <label for="mood">Mood:</label>
       <input type="text" id="s3urltovideo" name="s3urltovideo" />
+
+      <label for="energy">Energy:</label>
+      <input type="text" id="s3urltovideo" name="s3urltovideo" />
+
+      <label for="notes">Notes:</label>
+      <input type="text" id="s3urltovideo" name="s3urltovideo" placeholder="Add a note..." />
+      
 
       <input type="button" id="button1" onclick="doPostOfForm()" value="Add Data" />
     </form>
