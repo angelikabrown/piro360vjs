@@ -2,6 +2,10 @@ from flask import request, jsonify
 from models import db, Data
 
 def init_routes(app):
+    @app.route('/hi', methods=['GET'])
+    def hi():
+        return "Hello, World!"
+
     @app.route('/api/data', methods=['GET'])
     def get_data():
         data = Data.query.all()

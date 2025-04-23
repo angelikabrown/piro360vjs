@@ -2,7 +2,7 @@ const API_URL = `http://localhost:8080`;
 
 function doPostOfForm(event) {
   //event.preventDefault();
-  var floozy = new FormData(document.getElementById('addpiroform'));
+  var floozy = new FormData(document.getElementById('adddataform'));
 
   var object = {};
   for (var p of floozy) {
@@ -40,7 +40,7 @@ async function postJSON(data) {
 window.addEventListener(
   'DOMContentLoaded',
   function () {
-    const form = document.getElementById('addpiroform');
+    const form = document.getElementById('adddataform');
     const button1 = document.getElementById('button1');
     console.log('form is ', form, 'button1 is ', button1, 'doPostOfForm is ', doPostOfForm);
 

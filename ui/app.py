@@ -35,8 +35,9 @@ def create_app():
             # else:
             #     print("User with username 'joes' already exists.")
             #u5 = User(email="eat@jan", username="jan", password="passwurd")
-            cd1 = Data(cycle_day="CD1", temperature=98.6, mood="good", energy="low", notes="New cycle begins", date="2023-10-01", timestamp="2023-10-01 12:00:00")
-            db.session.add(cd1)
+            #cd1 = Data(cycle_day="CD1", temperature=98.6, mood="good", energy="low", notes="New cycle begins", date="2023-10-01", timestamp="2023-10-01 12:00:00")  
+            cd2 = Data(cycle_day="CD2", temperature=98.7, mood="happy", energy="high", notes="Feeling great", date="2023-10-02", timestamp="2023-10-02 12:00:00")
+            db.session.add(cd2)
             db.session.commit()
 
 
