@@ -8,21 +8,30 @@
     <h1>Add your data</h1>
     <form id="adddataform">
       
+      <div>
       <label for="cycleday">Cycle Day:</label>
       <input type="text" id="title" name="title" required  placeholder="CD1"/>
-      
+      </div>
+
+      <div>
       <label for="temperature">Temperature:</label>
-      <input type="text" id="description" name="description" />
+      <input type="text" id="temperature" name="temperature" placeholder="98.6" />
+      </div>
 
+      <div>
       <label for="mood">Mood:</label>
-      <input type="text" id="s3urltovideo" name="s3urltovideo" />
+      <input type="text" id="mood" name="mood" placeholder="Good, Bad, Swing"/>
+      </div>
 
+      <div>
       <label for="energy">Energy:</label>
-      <input type="text" id="s3urltovideo" name="s3urltovideo" />
+      <input type="text" id="energy" name="energy" placeholder="High, Med, Low"/>
+      </div>
 
+      <div>
       <label for="notes">Notes:</label>
-      <input type="text" id="s3urltovideo" name="s3urltovideo" placeholder="Add a note..." />
-      
+      <input type="text" id="notes" name="notes" placeholder="Add a note..." />
+      </div>
 
       <input type="button" id="button1" onclick="doPostOfForm()" value="Add Data" />
     </form>
