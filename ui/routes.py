@@ -2,9 +2,14 @@ from flask import request, jsonify
 from models import db, Data
 
 def init_routes(app):
-    @app.route('/hi', methods=['GET'])
+    @app.route('/', methods=['GET'])
     def hi():
         return "Hello, World!"
+    
+    # @app.route('/data', methods=['GET'])
+    # def get_data():
+    #     data = Data.query.all()
+    #     return jsonify([d.to_dict() for d in data])
 
     @app.route('/api/data', methods=['GET'])
     def get_data():

@@ -5,7 +5,7 @@ const API_URL = `http://localhost:8080`;
 //
 //
 function fetchTicketsData() {
-  fetch(`${API_URL}/api/tickets`)
+  fetch(`${API_URL}/api/data`)
     .then(res => {
       //console.log("res is ", Object.prototype.toString.call(res));
       return res.json();

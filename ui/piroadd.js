@@ -2,7 +2,7 @@ const API_URL = `http://localhost:8080`;
 
 function doPostOfForm(event) {
   //event.preventDefault();
-  var floozy = new FormData(document.getElementById('adddataform'));
+  var floozy = new FormData(document.getElementById('dataform'));
 
   var object = {};
   for (var p of floozy) {

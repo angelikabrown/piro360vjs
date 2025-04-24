@@ -13,7 +13,7 @@ function fetchData() {
     .catch(error => {
       errm = `Error Fetching data : ${error}`
       console.log(errm);
-      document.getElementById('posts').innerHTML = errm;
+      document.getElementById('posts').innerHTML = `<p>${errm}</p>`;
     });
 }
 
@@ -34,23 +34,27 @@ function show(data) {
   const list = document.createDocumentFragment();
   //console.log('Data:', data);
 
+
+
   data.map(function (post) {
-    console.log('Data:', post);
+   console.log('Data:', post);
     let li = document.createElement('li');
     let title = document.createElement('h3');
     let body = document.createElement('p');
-    let by = document.createElement('p');
-    title.innerHTML = `<a href="/ui/pirodetail.html?piroid=${post.id}">${post.title}</a>`;
-    body.innerHTML = `${post.description}`;
-    by.innerHTML = `${post.created} - ${post.key}`;
+    // let by = document.createElement('p');
+    title.innerHTML = `<a href="/ui/pirodetail.html?dataid=${post.id}">${post.title}</a>`;
+    //body.innerHTML = `${post.description}`;
+    //by.innerHTML = `${post.created} - ${post.key}`;
 
     li.appendChild(title);
     li.appendChild(body);
-    li.appendChild(by);
+    //li.appendChild(by);
     list.appendChild(li);
   });
 
   ul.appendChild(list);
+
 }
+
 
 fetchData();
