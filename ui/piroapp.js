@@ -1,7 +1,7 @@
 const API_URL = `http://localhost:8080`;
 
 function fetchData() {
-  fetch(`${API_URL}/api/piros/`)
+  fetch(`${API_URL}/api/data/`)
     .then(res => {
       //let resstr = res.json();
       //console.log("res is ", resstr);
@@ -35,7 +35,7 @@ function show(data) {
   //console.log('Data:', data);
 
   data.map(function (post) {
-    console.log('Piro:', post);
+    console.log('Data:', post);
     let li = document.createElement('li');
     let title = document.createElement('h3');
     let body = document.createElement('p');
