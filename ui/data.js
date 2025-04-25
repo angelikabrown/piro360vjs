@@ -35,7 +35,7 @@ function showDataList(data) {
         // genres.textContent = `Genres: ${entry.genres.join(', ')}`;
 
         let viewLink = document.createElement('a');
-        viewLink.href = `/ui/data_detail.html?dataid=${data.id}`;
+        viewLink.href = `/ui/datadetail.html?dataid=${data.id}`;
         viewLink.textContent = data.cycle_day;
 
          div.appendChild(title);
