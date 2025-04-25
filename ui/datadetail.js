@@ -15,3 +15,7 @@ function fetchData() {
             document.getElementById('data-list').innerHTML = 'Error Loading Data';
         });
 }
+
+
+
+handlePage();
