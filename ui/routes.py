@@ -17,6 +17,7 @@ def init_routes(app):
         data = Data.query.all()
         return jsonify([d.to_dict() for d in data])
 
+    #grab details of a specific data entry by id
     @app.route('/api/data/<int:id>', methods=['GET'])
     def get_data_by_id(id):
         print(f"GET /api/data/{id} called")
