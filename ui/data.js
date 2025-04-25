@@ -1,10 +1,14 @@
 const API_URL = `http://localhost:8080`;
 
 function fetchData() {
-    fetch(`${API_URL}/api/data/`)
+    fetch(`${API_URL}/data`, {
+        headers: {
+            'Cache-Control': 'no-cache'
+        }
+    })
         .then(res => res.json())
         .then(data => {
-            showEntryList(data);
+            showDataList(data);
         })
         .catch(error => {
             console.error(`Error Fetching entries: ${error}`);
@@ -13,13 +17,14 @@ function fetchData() {
 }
 
 function showDataList(data) {
-    const DataListDiv = document.getElementById('data-list');
+    const DataListDiv = document.getElementById('data-list')
+    DataListDiv.innerHTML = ''; // Clear any existing content
     const list = document.createDocumentFragment();
 
-    data.map(function (entry) {
+    data.map(function (data) {
         let div = document.createElement('div');
         let title = document.createElement('h3');
-        title.textContent = entry.title || 'No Title';
+        title.textContent = data.cycle_day || 'No Title';
 
         // let details = document.createElement('p');
         // details.textContent = `Rating ${entry.rating}`;
@@ -27,9 +32,9 @@ function showDataList(data) {
         // let genres = document.createElement('p');
         // genres.textContent = `Genres: ${entry.genres.join(', ')}`;
 
-        let viewLink = document.createElement('a');
-        viewLink.href = `/ui/data_detail.html?dataid=${entry.id}`;
-        viewLink.textContent = 'View Details';
+        // let viewLink = document.createElement('a');
+        // viewLink.href = `/ui/data_detail.html?dataid=${entry.id}`;
+        // viewLink.textContent = 'View Details';
 
         div.appendChild(title);
         // div.appendChild(details);
@@ -39,8 +44,12 @@ function showDataList(data) {
         list.appendChild(div);
     });
 
+
+
     DataListDiv.appendChild(list);
-}
+    }
+
+
 
 function handlePage() {
     console.log('load all data');

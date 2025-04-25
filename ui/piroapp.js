@@ -1,7 +1,7 @@
 const API_URL = `http://localhost:8080`;
 
 function fetchData() {
-  fetch(`${API_URL}/api/data/`)
+  fetch(`${API_URL}/data/`)
     .then(res => {
       //let resstr = res.json();
       //console.log("res is ", resstr);

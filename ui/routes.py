@@ -13,6 +13,7 @@ def init_routes(app):
 
     @app.route('/api/data', methods=['GET'])
     def get_api_data():
+        print("GET /api/data called")
         data = Data.query.all()
         return jsonify([d.to_dict() for d in data])
 
