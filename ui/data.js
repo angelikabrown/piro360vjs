@@ -22,9 +22,11 @@ function showDataList(data) {
     const list = document.createDocumentFragment();
 
     data.map(function (data) {
-        let div = document.createElement('div');
-        let title = document.createElement('h3');
-        title.textContent = data.cycle_day || 'No Title';
+         let div = document.createElement('div');
+         let title = document.createElement('h3');
+        // title.textContent = data.cycle_day || 'No Title';
+
+
 
         // let details = document.createElement('p');
         // details.textContent = `Rating ${entry.rating}`;
@@ -32,16 +34,17 @@ function showDataList(data) {
         // let genres = document.createElement('p');
         // genres.textContent = `Genres: ${entry.genres.join(', ')}`;
 
-        // let viewLink = document.createElement('a');
-        // viewLink.href = `/ui/data_detail.html?dataid=${entry.id}`;
-        // viewLink.textContent = 'View Details';
+        let viewLink = document.createElement('a');
+        viewLink.href = `/ui/data_detail.html?dataid=${data.id}`;
+        viewLink.textContent = data.cycle_day;
 
-        div.appendChild(title);
+         div.appendChild(title);
         // div.appendChild(details);
         // div.appendChild(genres);
-        // div.appendChild(viewLink);
+         div.appendChild(viewLink);
 
-        list.appendChild(div);
+         list.appendChild(div);
+      
     });
 
 
