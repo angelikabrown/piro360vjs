@@ -8,12 +8,12 @@ function fetchData() {
         })
         .catch(error => {
             console.error(`Error Fetching entries: ${error}`);
-            document.getElementById('data-list').innerHTML = 'Error Loading Entries';
+            document.getElementById('data-list').innerHTML = 'Error Loading Data';
         });
 }
 
 function showDataList(data) {
-    const entriesListDiv = document.getElementById('data-list');
+    const DataListDiv = document.getElementById('data-list');
     const list = document.createDocumentFragment();
 
     data.map(function (entry) {
@@ -28,7 +28,7 @@ function showDataList(data) {
         // genres.textContent = `Genres: ${entry.genres.join(', ')}`;
 
         let viewLink = document.createElement('a');
-        viewLink.href = `/ui/data_detail.html?dataid=${data.id}`;
+        viewLink.href = `/ui/data_detail.html?dataid=${entry.id}`;
         viewLink.textContent = 'View Details';
 
         div.appendChild(title);
@@ -39,12 +39,12 @@ function showDataList(data) {
         list.appendChild(div);
     });
 
-    entriesListDiv.appendChild(list);
+    DataListDiv.appendChild(list);
 }
 
 function handlePage() {
     console.log('load all data');
-    fetchEntriesData();
+    fetchData();
 }
 
 handlePage();
