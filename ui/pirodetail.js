@@ -1,7 +1,7 @@
 // const API_URL = `http://localhost:8080`;
 
 // function fetchData(dataid) {
-//   fetch(`${API_URL}/api/data/${dataid}`)
+//   fetch(`${API_URL}/data/<int:id>`)
 //     .then(res => {
 //       //console.log("res is ", Object.prototype.toString.call(res));
 //       return res.json();
@@ -49,10 +49,10 @@
 //   let by = document.createElement('p');
 //   let img = document.createElement('p');
 //   title.innerHTML = `<a href="/ui/pirodetail.html?dataid=${post.id}">${post.title}</a>`;
-//   body.innerHTML = `${post.temperature}`;
-//   body.innerHTML = `${post.mood}`;
-//   body.innerHTML = `${post.energy}`;
-//   body.innerHTML = `${post.notes}`;
+//   body.innerHTML = `${data.temperature}`;
+//   body.innerHTML = `${data.mood}`;
+//   body.innerHTML = `${data.energy}`;
+//   body.innerHTML = `${data.notes}`;
 
 //   // img.innerHTML = `<img src="http://localhost:8080/api/piros/${data.id}/image" alt="image" width="300" height="300">`;
 //   by.innerHTML = `${post.created} - ${post.id}`;
