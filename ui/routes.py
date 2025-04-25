@@ -6,13 +6,13 @@ def init_routes(app):
     def hi():
         return "Hello, World!"
     
-    # @app.route('/data', methods=['GET'])
-    # def get_data():
-    #     data = Data.query.all()
-    #     return jsonify([d.to_dict() for d in data])
+    @app.route('/data', methods=['GET'])
+    def get_all_data():
+        data = Data.query.all()
+        return jsonify([d.to_dict() for d in data])
 
     @app.route('/api/data', methods=['GET'])
-    def get_data():
+    def get_api_data():
         data = Data.query.all()
         return jsonify([d.to_dict() for d in data])
 
