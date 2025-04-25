@@ -1,18 +1,18 @@
 const API_URL = `http://localhost:8080`;
 
-function fetchEntriesData() {
-    fetch(`${API_URL}/data/`)
+function fetchData() {
+    fetch(`${API_URL}/api/data/`)
         .then(res => res.json())
         .then(data => {
             showEntryList(data);
         })
         .catch(error => {
             console.error(`Error Fetching entries: ${error}`);
-            document.getElementById('entries-list').innerHTML = 'Error Loading Entries';
+            document.getElementById('data-list').innerHTML = 'Error Loading Entries';
         });
 }
 
-function showEntryList(data) {
+function showDataList(data) {
     const entriesListDiv = document.getElementById('data-list');
     const list = document.createDocumentFragment();
 
@@ -28,7 +28,7 @@ function showEntryList(data) {
         // genres.textContent = `Genres: ${entry.genres.join(', ')}`;
 
         let viewLink = document.createElement('a');
-        viewLink.href = `/ui/entry_detail.html?dataid=${data.id}`;
+        viewLink.href = `/ui/data_detail.html?dataid=${data.id}`;
         viewLink.textContent = 'View Details';
 
         div.appendChild(title);
