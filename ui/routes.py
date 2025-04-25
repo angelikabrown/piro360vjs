@@ -18,6 +18,7 @@ def init_routes(app):
 
     @app.route('/api/data/<int:id>', methods=['GET'])
     def get_data_by_id(id):
+        print(f"GET /api/data/{id} called")
         data = Data.query.get_or_404(id)
         return jsonify(data.to_dict())
 
