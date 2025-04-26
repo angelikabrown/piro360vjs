@@ -33,6 +33,7 @@ function showDataDetail(datadetail) {
     const ul = document.getElementById('datadetail');
     const detail = document.createDocumentFragment();
     console.log('Data:', datadetail);
+    
     let li = document.createElement('div');
     let title = document.createElement('h2');
     let body = document.createElement('p');
