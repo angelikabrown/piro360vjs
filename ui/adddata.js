@@ -2,7 +2,7 @@ const API_URL = `http://localhost:8080`;
 
 
 function doPostOfForm(event) {
-    //event.preventDefault();
+    event.preventDefault();
     var floozy = new FormData(document.getElementById('adddataform'));
     
     var object = {};
@@ -44,7 +44,7 @@ window.addEventListener(
         const button1 = document.getElementById('button1');
         console.log('form is ', form, 'button1 is ', button1, 'doPostOfForm is ', doPostOfForm);
 
-        form.addEventListener(button1, doPostOfForm);
+        form.addEventListener('click', doPostOfForm);
     },
     false,
 );
