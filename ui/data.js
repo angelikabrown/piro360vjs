@@ -36,11 +36,12 @@ function showDataList(data) {
 
         let viewLink = document.createElement('a');
         viewLink.href = `/ui/datadetail.html?dataid=${data.id}`;
+        viewLink.style = 'font-size: 20px; color: navy; text-decoration: none;';
+        viewLink.onmouseover = () => viewLink.style.fontStyle = 'italic';
+        viewLink.onmouseout = () => viewLink.style.fontStyle = 'normal';
         viewLink.textContent = data.cycle_day;
 
          div.appendChild(title);
-        // div.appendChild(details);
-        // div.appendChild(genres);
          div.appendChild(viewLink);
 
          list.appendChild(div);
