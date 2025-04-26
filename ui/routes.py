@@ -24,7 +24,7 @@ def init_routes(app):
         data = Data.query.get_or_404(id)
         return jsonify(data.to_dict())
 
-    @app.route('/api/data', methods=['POST'])
+    @app.route('/data', methods=['POST'])
     def create_data():
         new_data = Data(
             cycle_day=request.json['cycle_day'],

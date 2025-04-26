@@ -44,17 +44,23 @@ function showDataDetail(datadetail) {
     let mood = document.createElement('p');
     let energy = document.createElement('p');
     let notes = document.createElement('p');
+    let date = document.createElement('p');
+    date.style.fontStyle = 'italic';
+    date.style.fontSize = 'small';
+    date.style.color = 'gray';
 
     temperature.innerHTML = `Temperature: ${datadetail.temperature}`;
     mood.innerHTML = `Mood: ${datadetail.mood}`;
     energy.innerHTML = `Energy: ${datadetail.energy}`;
     notes.innerHTML = `Notes: ${datadetail.notes}`;
+    date.innerHTML = `Added: ${datadetail.date}`;
 
     li.appendChild(title);
     li.appendChild(temperature);
     li.appendChild(mood);
     li.appendChild(energy);
-    li.appendChild(notes);
+    li.appendChild(notes)
+    li.appendChild(date);
   
  
 
