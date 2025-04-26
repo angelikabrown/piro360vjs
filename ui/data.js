@@ -55,7 +55,7 @@ function showDataList(data) {
 
 
 function handlePage() {
-    console.log('load all data');
+    console.log('load data detail');
     fetchData();
 }
 
