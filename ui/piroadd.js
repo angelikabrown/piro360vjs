@@ -19,7 +19,7 @@ function doPostOfForm(event) {
 
 async function postJSON(data) {
   try {
-    const response = await fetch(`${API_URL}/api/data`, {
+    const response = await fetch(`${API_URL}/data`, {
       method: 'POST', // or 'PUT'
       headers: {
         accept: '*/*',
