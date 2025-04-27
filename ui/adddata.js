@@ -27,26 +27,6 @@ function doPostOfForm(event) {
         .catch(error => console.error('Error:', error));
 }
 
-// async function postJSON(data) {
-//     try {
-//         const response = await fetch(`${API_URL}/data`, {
-//             method: 'POST', // or 'PUT'
-//             headers: {
-//                 accept: '*/*',
-//                 'Content-Type': 'application/json',
-//             },
-//             body: data, // This was ALSO Stringifying the data
-//             // body: JSON.stringify(data)
-//             // but this is already a string because I did the stringify above
-//         });
-
-//         const result = await response.json();
-//         console.log('Success:', result);
-
-//     } catch (error) {
-//         console.error('Error:', error);
-//     }
-// }
 window.addEventListener(
     'DOMContentLoaded',
     function () {
