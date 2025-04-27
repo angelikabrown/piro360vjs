@@ -26,6 +26,7 @@ def init_routes(app):
 
     @app.route('/data', methods=['POST'])
     def create_data():
+        print("POST /data called")
         new_data = Data(
             cycle_day=request.json['cycle_day'],
             temperature=request.json['temperature'],

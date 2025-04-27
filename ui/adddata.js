@@ -11,8 +11,17 @@ function doPostOfForm(event) {
         let value = p[1];
         object[name] = value;
     }
+
+    object['cycle_day'] = document.getElementById('cycle_day').value;
+    object['temperature'] = document.getElementById('temperature').value;
+    object['mood'] = document.getElementById('mood').value;
+    object['energy'] = document.getElementById('energy').value;
+    object['notes'] = document.getElementById('notes').value;
+    object['date'] = document.getElementById('date').value;
     object['timestamp'] = Date.now().toString();
+
     console.log('object is ', object);
+    
     var json = JSON.stringify(object);
     // only need to stringify once
     postJSON(json);
