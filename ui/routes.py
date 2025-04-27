@@ -27,6 +27,7 @@ def init_routes(app):
     @app.route('/data', methods=['POST'])
     def create_data():
         print("POST /data called")
+        print("Incoming JSON payload:", request.json)
         new_data = Data(
             cycle_day=request.json['cycle_day'],
             temperature=request.json['temperature'],
@@ -39,6 +40,8 @@ def init_routes(app):
         db.session.add(new_data)
         db.session.commit()
         return jsonify(new_data.to_dict()), 201
+    
+
     @app.route('/api/data/<int:id>', methods=['PUT'])
     def update_data(id):
         data = Data.query.get_or_404(id)
