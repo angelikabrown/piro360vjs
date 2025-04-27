@@ -40,7 +40,7 @@ async function postJSON(data) {
 window.addEventListener(
   'DOMContentLoaded',
   function () {
-    const form = document.getElementById('adddataform');
+    const form = document.getElementById('dataform');
     const button1 = document.getElementById('button1');
     console.log('form is ', form, 'button1 is ', button1, 'doPostOfForm is ', doPostOfForm);
 

@@ -6,34 +6,35 @@
   </head>
   <body>
     <h1>Add your data</h1>
-    <form id="dataform">
+    <form id="dataform" action="/data" method="POST">
       
       <div>
-      <label for="cycleday">Cycle Day:</label>
-      <input type="text" id="title" name="title" required  placeholder="CD1"/>
+      <label for="cycle_day">Cycle Day:</label>
+      <input type="text" id="cycle_day" name="cycle_day" required  placeholder="CD1"/>
       </div>
 
       <div>
       <label for="temperature">Temperature:</label>
-      <input type="text" id="temperature" name="temperature" placeholder="98.6" />
+      <input type="float" id="temperature" name="temperature" required placeholder="98.6" />
       </div>
 
       <div>
       <label for="mood">Mood:</label>
-      <input type="text" id="mood" name="mood" placeholder="Good, Bad, Swing"/>
+      <input type="text" id="mood" name="mood" required placeholder="Good, Bad, Swing"/>
       </div>
 
       <div>
       <label for="energy">Energy:</label>
-      <input type="text" id="energy" name="energy" placeholder="High, Med, Low"/>
+      <input type="text" id="energy" name="energy" required placeholder="High, Med, Low"/>
       </div>
 
       <div>
       <label for="notes">Notes:</label>
       <input type="text" id="notes" name="notes" placeholder="Add a note..." />
       </div>
+      <button type="submit" id="button1">Add Data</button>
 
-      <input type="button" id="button1" onclick="doPostOfForm()" value="Add Data" />
+      
     </form>
     <script src="./adddata.js"></script>
   </body>
