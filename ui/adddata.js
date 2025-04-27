@@ -20,7 +20,10 @@ function doPostOfForm(event) {
         body: json,
     })
         .then(response => response.json())
-        .then(data => console.log('Success:', data))
+        .then(data => {
+            console.log('Success:', data);
+            window.location.href = `/ui/datadetail.html?dataid=${data.id}`;
+        })
         .catch(error => console.error('Error:', error));
 }
 
