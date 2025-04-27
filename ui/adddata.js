@@ -8,7 +8,7 @@ function doPostOfForm(event) {
     formData.forEach((value, key) => {
         object[key] = value;
     });
-    object['timestamp'] = Date.now().toString();
+    object['timestamp'] = `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`;
 
     const json = JSON.stringify(object);
 
