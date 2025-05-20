@@ -6,7 +6,9 @@ from flask_cors import CORS
 
 #from . import create_app
 
-
+#run python app.py to start the server
+#run python3 -m http.server 9000 to start the frontend
+#next create a charts page showing 7 days of data in a line chart
 
 def create_app():
     app = Flask(__name__)
