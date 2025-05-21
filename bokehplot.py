@@ -1,8 +1,8 @@
 import os
 import sqlite3
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from bokeh.plotting import figure
-from bokeh.embed import json_item
+from bokeh.embed import json_item, components
 from bokeh.resources import CDN
 from jinja2 import Template
 
