@@ -17,7 +17,7 @@ page = Template("""
 <head>
   {{ resources }}
 </head>
-<h1>Penguin size</h1>
+<h1>Cycle Data</h1>
 <body>
   <div id="myplot"></div>
   <div id="myplot2"></div>
@@ -45,3 +45,20 @@ def fetch_data():
     dates = [row[0] for row in rows]
     temperatures = [row[1] for row in rows]
     return dates, temperatures
+
+
+#create the line chart
+def make_line_chart(dates, temperatures):
+    p = figure(title="Cycle Data", x_axis_label='Date', y_axis_label='Temperature', sizing_mode="fixed", width=400, height=400)
+    p.line(dates, temperatures, legend_label="Temperature", line_width=2)
+    return p
+
+#flask route to render line chart
+@app.route('/line_chart')
+def line_chart():
+    dates, temperatures = fetch_data()
+    p = make_line_chart(dates, temperatures)
+    return json.dumps(json_item(p, "line_chart"))
+
+if __name__ == "__main__":
+    app.run()
