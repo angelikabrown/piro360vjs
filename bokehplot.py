@@ -40,3 +40,8 @@ def fetch_data():
 
     # Execute a query to fetch the data
     cursor.execute("SELECT date, temperature FROM Data")
+    rows = cursor.fetchall()
+    conn.close()
+    dates = [row[0] for row in rows]
+    temperatures = [row[1] for row in rows]
+    return dates, temperatures
