@@ -1,6 +1,6 @@
 
 import json
-
+import sqlite3
 from flask import Flask
 from jinja2 import Template
 
@@ -34,29 +34,9 @@ page = Template("""
 </body>
 """)
 
-colormap = {'Adelie': 'red', 'Chinstrap': 'green', 'Gentoo': 'blue'}
-colors = [colormap[x] for x in data['species']]
+def fetch_data():
+    conn = sqlite3.connect('cyclesync.db')
+    cursor = conn.cursor()
 
-def make_plot(x, y):
-    p = figure(title = "Penguin size", sizing_mode="fixed", width=400, height=400)
-    p.xaxis.axis_label = x
-    p.yaxis.axis_label = y
-    p.scatter(data[x], data[y], color=colors, fill_alpha=0.2, size=10)
-    return p
-
-@app.route('/')
-def root():
-    return page.render(resources=CDN.render())
-
-@app.route('/plot')
-def plot():
-    p = make_plot('flipper_length_mm', 'body_mass_g')
-    return json.dumps(json_item(p, "myplot"))
-
-@app.route('/plot2')
-def plot2():
-    p = make_plot('bill_length_mm', 'body_mass_g')
-    return json.dumps(json_item(p))
-
-if __name__ == '__main__':
-    app.run()
+    # Execute a query to fetch the data
+    cursor.execute("SELECT date, temperature FROM Data")
