@@ -19,17 +19,11 @@ page = Template("""
 </head>
 <h1>Cycle Data</h1>
 <body>
-  <div id="myplot"></div>
-  <div id="myplot2"></div>
+  <div id="line_chart"></div>
   <script>
-  fetch('/plot')
-    .then(function(response) { return response.json(); })
-    .then(function(item) { return Bokeh.embed.embed_item(item); })
-  </script>
-  <script>
-  fetch('/plot2')
-    .then(function(response) { return response.json(); })
-    .then(function(item) { return Bokeh.embed.embed_item(item, "myplot2"); })
+  fetch('/line_chart)
+      .then(function(response) { return response.json(); })
+      .then(function(item) { return Bokeh.embed.embed_item(item, "line_chart"); });
   </script>
 </body>
 """)
