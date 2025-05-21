@@ -1,13 +1,9 @@
-
-import json
 import sqlite3
-from flask import Flask
-from jinja2 import Template
-
-from bokeh.embed import json_item
+from flask import Flask, jsonify
 from bokeh.plotting import figure
+from bokeh.embed import json_item
 from bokeh.resources import CDN
-from bokeh.sampledata.penguins import data
+from jinja2 import Template
 
 app = Flask(__name__)
 
@@ -17,11 +13,11 @@ page = Template("""
 <head>
   {{ resources }}
 </head>
-<h1>Cycle Data</h1>
 <body>
+<h1>Cycle Data</h1>
   <div id="line_chart"></div>
   <script>
-  fetch('/line_chart)
+  fetch('/line_chart')
       .then(function(response) { return response.json(); })
       .then(function(item) { return Bokeh.embed.embed_item(item, "line_chart"); });
   </script>
@@ -48,11 +44,15 @@ def make_line_chart(dates, temperatures):
     return p
 
 #flask route to render line chart
+@app.route('/')
+def root():
+    return page.render(resources=CDN.render())
+
 @app.route('/line_chart')
 def line_chart():
     dates, temperatures = fetch_data()
     p = make_line_chart(dates, temperatures)
-    return json.dumps(json_item(p, "line_chart"))
+    return jsonify(json_item(p, "line_chart"))
 
 if __name__ == "__main__":
     app.run()
